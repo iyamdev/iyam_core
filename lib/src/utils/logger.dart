@@ -108,7 +108,7 @@ class AppLogger {
 
     developer.log(
       buffer.toString(),
-      name: 'iyam_core',
+      name: 'log_developer',
       level: _mapLevel(level),
       error: data is Exception ? data : null,
       stackTrace: stackTrace,

@@ -1,4 +1,4 @@
-import '../iyam_core.dart';
+import '../../iyam_core.dart';
 
 abstract class ApiClient {
   Future<NetworkResult<T>> get<T>(String path);

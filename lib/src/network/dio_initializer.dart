@@ -1,10 +1,10 @@
 import 'package:dio/dio.dart';
 
 import '../storage/secure_storage.dart';
-import '../network/api_interceptor.dart';
-import '../network/refresh_token_interceptor.dart';
-import '../network/auth_token_manager.dart';
-import '../network/logging/api_logging_interceptor.dart';
+import 'api_interceptor.dart';
+import 'refresh_token_interceptor.dart';
+import 'auth_token_manager.dart';
+import 'logging/api_logging_interceptor.dart';
 import '../utils/logger.dart';
 
 class DioInitializer {
