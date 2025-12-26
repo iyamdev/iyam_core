@@ -1,39 +1,63 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# iyam_core
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages).
+`iyam_core` adalah **foundation package** untuk aplikasi Flutter yang berisi
+core utilities, data layer, network layer, storage, dan database abstraction
+yang **reusable, modular, dan production-ready**.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages).
--->
+Package ini dirancang untuk:
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+- digunakan di banyak aplikasi
+- tidak bergantung pada UI
+- mudah dikustom dari aplikasi (inversion of control)
+- cocok untuk small hingga enterprise-scale app
 
-## Features
+---
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+## ✨ Features
 
-## Getting started
+### 🔌 Network
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+- Dio initializer
+- Auth & refresh token interceptor
+- API request/response logging
+- Offline queue & retry
+- Unified network & repository result
 
-## Usage
+### 🗄️ Data Layer
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+- Base Repository & DataSource
+- Offline-first repository template
+- Pagination abstraction
+- List response & meta handling
 
-```dart
-const like = 'sample';
+### 💾 Storage
+
+- Secure storage wrapper
+- Local storage (SharedPreferences)
+- Generic read/write list helpers
+
+### 🗃️ Database
+
+- Sqflite database initializer
+- Base DAO abstraction
+- TTL cache helper
+- Optional encrypted database
+- Optional Drift ORM support
+
+### 🧰 Utilities
+
+- Logger (debug, info, warning, error)
+- Date formatter
+- Validators
+- Network checker
+
+---
+
+## 📦 Installation
+
+### Public (pub.dev)
+
+```yaml
+dependencies:
+  iyam_core: ^0.1.0
 ```
-
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
