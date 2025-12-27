@@ -1,6 +1,6 @@
 name: iyam_core
 description: Core foundation package (network, storage, utils)
-version: 0.1.1
+version: 0.1.2
 homepage: https://github.com/iyamdev/iyam_core
 repository: https://github.com/iyamdev/iyam_core
 
@@ -15,3 +15,4 @@ dependencies:
   sqflite: ^2.3.0
   path: ^1.9.0
   intl: ^0.19.0
+  image_picker: ^1.2.1
