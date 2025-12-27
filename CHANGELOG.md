@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [0.1.3] - 2025-12-27
+
+### Added
+
+- Added `FormDataSerializable` mixin to easily convert request models to `FormData`.
+- Support for `File` and `XFile` (image_picker) in `FormData` conversion.
+
 ## [0.1.2] - 2025-12-27
 
 ### Added

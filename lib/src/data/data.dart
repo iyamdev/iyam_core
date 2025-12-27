@@ -1,5 +1,6 @@
 export 'datasource/base_local_datasource.dart';
 export 'datasource/base_remote_datasource.dart';
+export 'model/model.dart';
 export 'pagination/paginated_repository.dart';
 export 'pagination/pagination_params.dart';
 export 'pagination/pagination_result.dart';
