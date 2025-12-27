@@ -1,11 +1,5 @@
 import 'package:dio/dio.dart';
-
-import '../storage/secure_storage.dart';
-import 'api_interceptor.dart';
-import 'refresh_token_interceptor.dart';
-import 'auth_token_manager.dart';
-import 'logging/api_logging_interceptor.dart';
-import '../utils/logger.dart';
+import 'package:iyam_core/iyam_core.dart';
 
 class DioInitializer {
   DioInitializer._();
@@ -31,6 +25,7 @@ class DioInitializer {
 
     final secureStorage = SecureStorage();
     final tokenManager = AuthTokenManager(secureStorage);
+    final localStorage = LocalStorage.instance;
 
     // ==============================
     // INTERCEPTORS ORDER (IMPORTANT)
@@ -49,15 +44,7 @@ class DioInitializer {
 
     // 2️⃣ Authorization header
     dio.interceptors.add(
-      ApiInterceptor(tokenManager),
-    );
-
-    // 3️⃣ Refresh token handler
-    dio.interceptors.add(
-      RefreshTokenInterceptor(
-        dio: dio,
-        tokenManager: tokenManager,
-      ),
+      ApiInterceptor(tokenManager, localStorage),
     );
 
     return dio;

@@ -1,6 +1,6 @@
 name: iyam_core
 description: Core foundation package (network, storage, utils)
-version: 0.1.3
+version: 0.1.4
 homepage: https://github.com/iyamdev/iyam_core
 repository: https://github.com/iyamdev/iyam_core
 

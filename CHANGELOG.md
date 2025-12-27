@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [0.1.4] - 2025-12-27
+
+### Changed
+
+- Remove `RefreshTokenInterceptor` as it's not used anymore.
+
 ## [0.1.3] - 2025-12-27
 
 ### Added
