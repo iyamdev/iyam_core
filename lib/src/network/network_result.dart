@@ -10,9 +10,11 @@ class NetworkSuccess<T> extends NetworkResult<T> {
 class NetworkFailure<T> extends NetworkResult<T> {
   final String message;
   final int? statusCode;
+  final T? data;
 
   const NetworkFailure({
     required this.message,
     this.statusCode,
+    this.data,
   });
 }

@@ -14,11 +14,22 @@ class DioApiClient implements ApiClient {
   }) async {
     try {
       final response = await dio.get(path, queryParameters: query);
-      return NetworkSuccess(response.data as T);
+      if (response.statusCode != null &&
+          response.statusCode! >= 200 &&
+          response.statusCode! < 300) {
+        return NetworkSuccess(response.data as T);
+      } else {
+        return NetworkFailure(
+          message: response.statusMessage ?? 'Network error',
+          statusCode: response.statusCode,
+          data: response.data as T?,
+        );
+      }
     } on DioException catch (e) {
       return NetworkFailure(
         message: e.message ?? 'Network error',
         statusCode: e.response?.statusCode,
+        data: e.response?.data as T?,
       );
     }
   }
@@ -30,11 +41,22 @@ class DioApiClient implements ApiClient {
   }) async {
     try {
       final response = await dio.post(path, data: body);
-      return NetworkSuccess(response.data as T);
+      if (response.statusCode != null &&
+          response.statusCode! >= 200 &&
+          response.statusCode! < 300) {
+        return NetworkSuccess(response.data as T);
+      } else {
+        return NetworkFailure(
+          message: response.statusMessage ?? 'Network error',
+          statusCode: response.statusCode,
+          data: response.data as T?,
+        );
+      }
     } on DioException catch (e) {
       return NetworkFailure(
         message: e.message ?? 'Network error',
         statusCode: e.response?.statusCode,
+        data: e.response?.data as T?,
       );
     }
   }
@@ -46,11 +68,22 @@ class DioApiClient implements ApiClient {
   }) async {
     try {
       final response = await dio.put(path, data: body);
-      return NetworkSuccess(response.data as T);
+      if (response.statusCode != null &&
+          response.statusCode! >= 200 &&
+          response.statusCode! < 300) {
+        return NetworkSuccess(response.data as T);
+      } else {
+        return NetworkFailure(
+          message: response.statusMessage ?? 'Network error',
+          statusCode: response.statusCode,
+          data: response.data as T?,
+        );
+      }
     } on DioException catch (e) {
       return NetworkFailure(
         message: e.message ?? 'Network error',
         statusCode: e.response?.statusCode,
+        data: e.response?.data as T?,
       );
     }
   }
@@ -59,11 +92,22 @@ class DioApiClient implements ApiClient {
   Future<NetworkResult<T>> delete<T>(String path) async {
     try {
       final response = await dio.delete(path);
-      return NetworkSuccess(response.data as T);
+      if (response.statusCode != null &&
+          response.statusCode! >= 200 &&
+          response.statusCode! < 300) {
+        return NetworkSuccess(response.data as T);
+      } else {
+        return NetworkFailure(
+          message: response.statusMessage ?? 'Network error',
+          statusCode: response.statusCode,
+          data: response.data as T?,
+        );
+      }
     } on DioException catch (e) {
       return NetworkFailure(
         message: e.message ?? 'Network error',
         statusCode: e.response?.statusCode,
+        data: e.response?.data as T?,
       );
     }
   }

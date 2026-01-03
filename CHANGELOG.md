@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [0.2.2] - 2026-01-04
+
+### Changed
+
+- Updated dependencies: `shared_preferences`, `sqflite`, and `path`.
+
 ## [0.2.1] - 2025-12-30
 
 ### Added
