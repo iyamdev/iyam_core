@@ -20,6 +20,7 @@ class DioInitializer {
           'Content-Type': 'application/json',
           'Accept': 'application/json',
         },
+        validateStatus: (status) => true,
       ),
     );
 
